@@ -1,4 +1,5 @@
 import { Config } from "./gameConfig";
+
 const levelsArr = ['light', 'middle', 'hard'];
 const patternArr =[
     ['tree', 'rhombus', 'ruLetterD', 'dinosour', 'fan'],
@@ -20,6 +21,9 @@ export class View {
         this.primeColor = "#000000";
         this.fillColor = "#000000";
         this.settings = null;
+        this.rightAudio = null;
+        this.leftAudio = null;
+       
 
     }
 
@@ -28,7 +32,11 @@ export class View {
         this.width = this.fieldColumnCount * this.cellWidth;
         this.height = this.fieldRowCount * this.cellHeight;
         this.updateConfig();
-        this.createMenu()
+        this.createMenu();
+        this.rightAudio = new Audio();
+        this.rightAudio.src = './assets/audio/left.mp3'
+        this.leftAudio = new Audio('./assets/audio/left.mp3');
+       
         //this.checkMute(Config.mute)
 
     }
@@ -146,15 +154,15 @@ createMenu (){
   this.container.append(menu);
     
 };
-// checkMute(isMute){
-//   if(isMute){
-//       this.container.querySelector('#mute span').textContent = `volume_up`;
-//   }
-//   else{
-//       this.container.querySelector('#mute span').textContent = 'no_sound';
+checkMute(isMute){
+  if(isMute){
+      this.container.querySelector('.mute span').textContent = `volume_up`;
+  }
+  else{
+      this.container.querySelector('.mute span').textContent = 'no_sound';
 
-//   }
-// }
+  }
+}
 
 switchTheme (){
   if(localStorage.getItem('theme') === 'night') {
@@ -672,12 +680,15 @@ switchTheme (){
               this.ctx.fillStyle = this.fillColor;
               this.ctx.fill();
               this.ctx.closePath();
+              //this.leftAudio.play();
 
             } else if (cells[r][c].isPainted && button === 0) {
               this.ctx.clearRect(cells[r][c].x, cells[r][c].y, this.cellWidth - 0.5, this.cellHeight - 0.5);
+              //this.leftAudio.play();
               
             } else if (!cells[r][c].isCrossed && button === 2) {
               this.ctx.clearRect(cells[r][c].x + 0.5, cells[r][c].y + 0.5, this.cellWidth - 0.5, this.cellHeight - 0.5);
+              this.rightAudio.play();
               //cross
               this.ctx.beginPath();
               this.ctx.moveTo(cells[r][c].x + 8.2, cells[r][c].y + 8.2);
@@ -689,6 +700,7 @@ switchTheme (){
               this.ctx.lineTo(cells[r][c].x + this.cellWidth -8.2, cells[r][c].y + 8.2);
               this.ctx.stroke();
             } else if (cells[r][c].isCrossed && button === 2) {
+              //this.rightAudio.play();
               this.ctx.clearRect(cells[r][c].x + 5.2, cells[r][c].y + 5.2, this.cellWidth - 5.2 , this.cellHeight - 5.2);
               this.ctx.beginPath();
 

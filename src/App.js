@@ -26,9 +26,18 @@ const App = (root) => {
   // Перехватываем все клики по ссылкам для роутера
   root.addEventListener("click", (event) => {
     const el = event.target;
+    // if(el.id === 'rules'  && window.location.pathname === '/'){
+    //   alert("Are you sure to leave a game? All progress will be lost!")
+    // }
+    
+    // if( el.id === 'about'  && window.location.pathname === '/'){
+    //   alert("Are you sure to leave a game? All progress will be lost!")
+    // }
+   
     if (el.matches(".menu__link")) {
       event.preventDefault();
       history.pushState({}, "", el.href);
+      
       Router(containerId);
     }
   });

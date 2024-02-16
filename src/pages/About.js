@@ -2,9 +2,17 @@ const About = () => {
 
   return `<div>
   <h2>Nonograms</h2>
-  <p><Game rules:<br> Nonograms is a puzzle game to reveal a hidden picture by looking at the number clues.The clues are given at the top and left side of the grid. Each number in these clue defines a block of black cell. A number indicates an unbroken line of black cells, and they are in the same order as the lines. These puzzles are often black and white—describing a binary image—but they can also be colored.
+  <p>
+  In <strong>1987</strong> , Non Ishida, a Japanese graphics editor, won a competition in Tokyo by designing grid pictures using skyscraper lights which are turned on or off. At the same time and with no connection, a professional Japanese puzzler named Tetsuya Nishio invents the same puzzles. From this, the concept of Paint by numbers and picture-forming logic puzzles was born.
   </p>
-  </div>`
+  <p><strong>In 1988</strong>, Non Ishida published three picture grid puzzles in Japan under the name of "Window Art Puzzles".<br>
+  <strong>In 1990</strong>, James Dalgety in the UK invented the name Nonograms after Non Ishida, and The Sunday Telegraph started publishing them on a weekly basis.<br>
+  <strong>In 1993</strong>, First book of Nonograms was published by Non Ishida in Japan. The Sunday Telegraph published a dedicated puzzle book titled the "Book of Nonograms". Nonograms are also published in Sweden, United States, South Africa and other countries.
+  </p>
+  <p><strong>In 1998</strong>, The Sunday Telegraph ran a competition to choose a new name for their puzzles. Griddlers was the winning name that readers chose. Pic-a-Pix puzzles in Germany with PM Magazin, a wholly owned subsidiary of Gruner + Jahr, the publishers of the famous Stern magazine.<br>
+  <strong>In 1999</strong>, Paint by numbers were published by Sanoma Uitgevers in Holland, Puzzler Media (formerly British European Associated Publishers) in the UK and Nikui Rosh Puzzles.
+  2006.01.01 - GameLO.net Website Premiere.
+  </p>`
   
 
 // const themeMode = document.querySelector('#theme');

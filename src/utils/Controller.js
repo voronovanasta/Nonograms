@@ -17,15 +17,6 @@ export class Controller {
 
 
     eventHandler() {
-        // themeMode.addEventListener('click', (e)=>{
-        //     e.preventDefault();
-        //     this.model.darkThemeOn();
-        // })
-        // mute.addEventListener('click', (e)=>{
-        //     e.preventDefault();
-        //     this.model.updateMute();
-
-        // })
         this.container.querySelector('#field').addEventListener("contextmenu", (e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -98,8 +89,14 @@ export class Controller {
                     this.model.resetTimer();
                 break;
              case 'theme-mode':
+                console.log("click")
                 e.preventDefault();
                 this.model.darkThemeOn();
+            case "mute":
+                const allAudio = document.querySelectorAll('audio');
+                allAudio.forEach((audio) =>{audio.muted = !audio.muted;})
+                    e.preventDefault();
+                    this.model.updateMute();
             }
         });
 

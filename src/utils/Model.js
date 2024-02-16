@@ -30,13 +30,14 @@ this.isMute = false;
     init (view) {
     this.view = view;
     this.updatePattern();
-    //this.view.checkMute()
-    //this.view.switchTheme()
+    this.view.checkMute()
+    
     this.view.createFieldCanvas();
     this.view.updateCanvasSettings(this.levelNumber)
     this.defineCells();
-    //this.darkThemeOn()
+    this.darkThemeOn()
     this.drawField()
+    //this.view.switchTheme()
     this.view.drawLeftClues(this.calculateClues().leftClues, levelsArr[this.levelNumber])
     this.view.drawTopClues(this.calculateClues().topClues, levelsArr[this.levelNumber])
     this.view.createTimer(this.minutes, this.sec)
@@ -45,8 +46,10 @@ this.isMute = false;
     this.calculateWinCondition();
     this.view.createResultMessage();
     this.view.createScoreTable();
+    
    
     }
+
 
     defineCells() {
       this.cells = []
