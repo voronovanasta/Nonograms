@@ -1,0 +1,16 @@
+export const Config  = {
+    'level': null,
+    'pattern' : null,
+    'fieldRowCount': 0,
+    'fieldColumnCount': 0,
+    'cellWidth': 0,
+    'cellHeight': 0,
+    'width': null,
+    'height':null,
+    'primeColor': null,
+    "fillColor": null,
+    "cells": [],
+    'mute': null,
+    'userId': null,
+    'canvas': null,
+}

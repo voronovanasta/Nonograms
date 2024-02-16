@@ -1,0 +1,36 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+ #login {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    font-size: 14px;
+  
+   
+ }
+
+ #register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  font-size: 14px;
+
+ }
+
+ #login,
+ #register > input{
+width: 200px;
+margin: 10px;
+
+ }
+  
+  .error {
+    color: hsl(348, 100%, 61%);
+    text-align: center;
+    font-size: small;
+  }
